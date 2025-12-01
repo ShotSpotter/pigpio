@@ -11830,6 +11830,9 @@ static int intGpioSetISRFunc(
    int fd;
    int err;
 
+   // From https://github.com/joan2937/pigpio/issues/613
+   gpio += 512;
+ 
    DBG(DBG_INTERNAL,
       "gpio=%d edge=%d timeout=%d function=%08"PRIXPTR" user=%d userdata=%08"PRIXPTR,
       gpio, edge, timeout, (uintptr_t)f, user, (uintptr_t)userdata);
